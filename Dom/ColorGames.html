@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        .wrapper {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+        }
+
+        .box {
+            padding: 10px 0;
+            width: 450px;
+            /* height:500px; */
+            text-align: center;
+            border: 1px solid black;
+        }
+
+        #start,#btn1,#btn2 {
+            width: 100px;
+            height: 50px;
+            font-size: 20px;
+            text-transform: uppercase;
+            font-weight: bold;
+            color: brown;
+            border-radius: 10px;
+        }
+
+        img {
+            width: 440px;
+            height: 240px;
+        }
+        .color-game h1{
+            display: inline;
+            padding: 5px;
+            color:lime;
+            box-shadow: 5px 5px 5px red;
+        }
+        .color-game h2{
+            margin:15px 0;
+            color:red;
+            cursor: pointer;
+            transition: color 0.5s;
+             display: inline;
+        }
+        .color-game h2:hover{
+            color:black;
+        }
+        #btn1,#btn2{
+            width:150px;
+            height:150px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="wrapper">
+        <div class="box" >
+            <!-- start section -->
+            <button id="start" onclick="btn1()">Start</button>
+            <!-- end section -->
+           
+            <!-- start loading section -->
+            <div class="loading-part" id="loading">
+                <img src="https://i.pinimg.com/originals/c7/e1/b7/c7e1b7b5753737039e1bdbda578132b8.gif" alt="">
+                <h1>loading....</h1>
+            </div>
+            <!-- start loading section -->
+
+            <!-- start game section -->
+            <div class="game-sect" id="game">
+                <img src="https://miro.medium.com/v2/resize:fit:800/0*oK_gbCVZVYbNnvjA.gif" alt="">
+                <div class="color-game">
+                    <h1>welcome to the color Game</h1><br><br>
+                    <h2  onclick="play()">play</h2><br><br>
+                    <h2 onclick="quit()">Exit</h2>
+                </div>
+            </div>
+            <!-- end game section -->
+            
+           
+            <div class="box2" id="ply">
+                <button  id="btn1" onclick="ply()">Player</button>
+                <button id="btn2" onclick="robot()">Robot</button>
+                <div class="attampt" id="atmp">
+                    <h2>Count Attempt: <span id="count"></span></h2>
+                </div>
+                <div class="check"><button onclick="checkColor()">Check color</button></div>
+            </div>
+
+           
+        </div>
+        </div>
+    <!-- <p id="para"></p>
+        <button onclick="btn1()">Decrement</button> -->
+    <!-- <script>
+             var para = document.getElementById('para')
+             var value = 5
+             function btn1(){
+                 if(value>0){
+                     value-=1
+                     para.textContent = value
+                }
+                else{
+                    alert("your game is  over now!")
+                }
+             }
+        </script> -->
+        <script>
+            
+                // document.getElementById("loading").style.display = 'none'
+                // document.getElementById("game").style.display = 'none'
+                // document.getElementById("ply").style.display = 'none'
+
+            //     function quit(){
+            //     document.getElementById("loading").style.display = 'none'
+            //     document.getElementById("game").style.display = 'none'
+            //     document.getAnimations("start").style.display ='block'
+            // }
+
+            let user = document.getElementById("btn1")
+            let robot1 = document.getElementById("btn2")
+            let lst = ['red','blue','orange','green','black','magenta']
+            user.style.color = "white"
+            function ply(){
+                let color = prompt("Enter the color ")
+                console.log("user select color is ",color)
+                user.style.background =color
+                
+            }
+            
+            function btn1(){
+                document.getElementById("start").style.display = 'none'
+                alert("Are you sure ? game is start... ")
+                setInterval(() => {
+                    // play()
+                    document.getElementById("ply").style.display = 'block'
+                    document.getElementById("game").style.display = 'block'
+                    document.getElementById("loading").style.display = 'none'
+                }, 3000);
+                // quit()
+                alert("Ok.... you can enter this game")
+                document.getElementById("loading").style.display = 'block'
+            }
+            function play(){
+                alert("let's play games")
+               
+            }
+            function robot(){
+            //  console.log("hellow robot")
+            // let color1 = Math.floor(Math.random()*10)
+            // console.log(color1)
+            //   lst.forEach((value,i)=>{
+            //     return value[i]==color1
+            //     robot1.style.background = value;
+            //     console.log("color is",i);
+            //   })
+             let lst1=[]
+            
+            // for(let key in lst){
+            //     console.log(lst[key])
+            // }
+            
+        }
+        function checkColor(){
+                // getRandomColor()
+                pickColor()
+
+            }
+            function getRandomColor(){
+                var letters = "0123456789CDEF";
+                var color = "#";
+                for(let i =0 ;i<6;i++){
+                    color+=letters[Math.floor(Math.random()*16)];
+                }
+                // return color
+                // robot1.style.background = color;
+            }
+              // JavaScript code to pick 
+    // a random color from array 
+
+    function pickColor() { 
+          
+          // Array containing colors 
+          var colors = [ 
+              'red', 'green', 'orange', 
+              'yellow', 'red', 'blue' ,'black'
+          ]; 
+            console.log("hellow")
+          // selecting random color 
+          var random_color = colors[(Math.floor( 
+                  Math.random() * colors.length))]; 
+            
+        //   var x = document.getElementById('pick'); 
+        //   x.style.color = random_color; 
+        robot1.style.background = random_color;
+
+          console.log(random_color)
+      } 
+        </script>
+</body>
+
+</html>

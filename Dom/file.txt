@@ -1,0 +1,27 @@
+when html document is loaded in the browser at becomes  object
+
+by the help of document object we can add or remove contain dynamicaly on are page 
+
+when a  page is going  to render to browser that moment dom is getting  created 
+
+methods  of dom
+1 write:-
+It  is used  to writeing something in a web page
+example: document.write("hellow")
+
+2 write align 
+this  method is used  to provide the new line charecter on the document
+example: document.write("hellow")
+
+3. get.ElementById("root"):-
+this method is  used to spacified one element of the given id 
+
+class = it is a multiple time to use 
+id = it is a unicue 
+
+4 get.ElementByClassNames
+this method  is used to specified all  named by same class 
+
+5 get.ElementByTagName
+this method is  used to specidied all tag name for same tag name
+

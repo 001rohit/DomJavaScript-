@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            min-height:100vh;
+            background: #000;
+        }
+        #container{
+            cursor: pointer;
+        }
+        .circle{
+              width:40px;
+              height:40px;
+              border-radius: 50px;
+              background: #000;
+            animation:animate 10s ease-in-out infinite;
+        }
+        @keyframes animate {
+           0%{
+            margin-left: 0;
+            margin-top:0;
+            background: orange;
+           }
+           25%{
+            background: lime;
+            margin-left: 200px;
+            margin-top: 0px;
+           }
+           50%{
+            margin-left:200px;
+            margin-top: 200px;
+            background: cyan;
+           }
+           75%{
+            margin-left:0px;
+            margin-top:200px;
+            background: brown;
+           }
+        }
+    </style>
+</head>
+<body>
+        <div id="container">
+            <div class="circle"></div>
+        </div>
+        <script>
+            let contain = document.getElementById("container")
+            let circle = document.querySelector('.circle')
+            contain.style.width="225px"
+            contain.style.height="225px"
+            contain.style.border = "2px solid brown"
+            contain.style.backgroundColor = "white"
+          
+            circle.addEventListener('click',()=>{
+                 if(contain.style.backgroundColor=="white"){
+                    contain.style.backgroundColor = "gray"
+                 }              
+                 else if(contain.style.backgroundColor=="gray"){
+                    contain.style.background = "white"
+                 }
+            })
+        </script>
+</body>
+</html>
